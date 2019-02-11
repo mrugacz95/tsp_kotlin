@@ -1,12 +1,12 @@
-import com.sun.org.apache.xpath.internal.operations.Bool
+open class LocalSearch : Solver() {
 
-class LocalSearch : Solver() {
+    var startSolution: Solution? = null
     override fun getName(): String {
         return "LocalSearch"
     }
 
     override fun solve(): Solution {
-        val solution = Solution(graph.size)
+        val solution: Solution = startSolution ?: Solution(graph.size)
         var bestScore = graph.countLength(solution)
         var prevScore: Int
         do {

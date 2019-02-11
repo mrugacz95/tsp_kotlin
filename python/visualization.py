@@ -1,62 +1,72 @@
-import sys
-
+import glob2
 import matplotlib.pyplot as plt
+import numpy as np
 
-nodes = []
 
-
-def distance(n1, n2):
+def distance(n1, n2, nodes):
     _, x1, y1 = nodes[n1]
     _, x2, y2 = nodes[n2]
     return round(((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5)
 
 
-def main():
-    with open(sys.argv[1]) as file:
+def read_graph(graph_file):
+    nodes = []
+    with open(graph_file) as file:
         lines = file.read().split('\n')
-        for line in lines[6:-2]:
-            nodes.append(list(map(int, line.split())))
-        for node_id, x, y in nodes:
-            plt.annotate(node_id - 1, (x, y))
-        ids, x, y = zip(*nodes)
-        plt.scatter(x, y, c='b', s=5)
-    dist = 0
-    with open(sys.argv[2]) as sol:
-        solution = list(map(int, sol.read().split("\n")))
+    for line in lines[6:-2]:
+        nodes.append(list(map(int, line.split())))
+    for node_id, x, y in nodes:
+        plt.annotate(node_id - 1, (x, y))
+    return nodes
+
+
+def plot_points(graph_file, nodes):
+    ids, x, y = zip(*nodes)
+    plt.scatter(x, y, c='b', s=5)
+
+
+def plot_loop(loop, nodes):
+    for node_id in range(len(loop)):
+        p1, p2 = loop[node_id - 1], loop[node_id]
+        _, x1, y1 = nodes[p1]
+        _, x2, y2 = nodes[p2]
+        plt.plot([x1, x2], [y1, y2], c='b', linewidth=1)
+
+
+def main():
+    averages = []
+    for solution_file in glob2.glob('data/solutions/*.tour'):
+        with open(solution_file) as sol:
+            lines = sol.read().split("\n")
+            all_info = {}
+            for line in lines:
+                k, v = line.split(':')
+                all_info[k] = v
+        if all_info['graph'] == 'kroA100':
+            averages.append((float(all_info['avg']), all_info['name']))
+        graph_file = f'data/{all_info["graph"]}.tsp'
+        nodes = read_graph(graph_file)
+        plot_points(graph_file, nodes)
+
+        solution = list(map(int, all_info['best'].split(', ')))
         first_loop = solution[:len(solution)]
         second_loop = solution[len(solution):]
         # first loop
-        for node_id in range(len(first_loop)):
-            p1, p2 = first_loop[node_id - 1], first_loop[node_id]
-            _, x1, y1 = nodes[p1]
-            _, x2, y2 = nodes[p2]
-            plt.plot([x1, x2], [y1, y2], c='b', linewidth=1)
-            dist += round(((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5)
+        plot_loop(first_loop, nodes)
         # second loop
-
-        for node_id in range(len(second_loop)):
-            p1, p2 = second_loop[node_id - 1], second_loop[node_id]
-            _, x1, y1 = nodes[p1]
-            _, x2, y2 = nodes[p2]
-            plt.plot([x1, x2], [y1, y2], c='b')
-            dist += round(((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5)
-    print(dist)
-    # length = 0
-    # for node_id in range(int(len(nodes) / 2) - 1):
-    #     print (node_id, node_id + 1)
-    #     length += distance(node_id, node_id + 1)
-    # print (49, 0)
-    # length += distance(74, 0)
-    # for node_id in range(int(len(nodes) / 2), len(nodes) - 1):
-    #     print (node_id, node_id + 1)
-    #     length += distance(node_id, node_id + 1)
-    #
-    # print (99, 50)
-    # length += distance(149, 75)
-    # print (length)
-    title = sys.argv[2].split('/')[2].split('.')
-    plt.title(f'{title[-2]} ({title[-3]})')
-    plt.savefig("vis.png")
+        plot_loop(second_loop, nodes)
+        plt.title(f'{all_info["name"]} ({all_info["graph"]})')
+        plt.savefig(solution_file.replace('tour', 'png'))
+        plt.show()
+    values, labels = zip(*sorted(averages))
+    labels, values = list(labels), list(values)
+    pos = np.arange(len(labels))
+    plt.bar(pos, values, log=True)
+    plt.xticks(pos, labels, rotation='vertical')
+    plt.title('Comparsion')
+    plt.subplots_adjust(bottom=0.45)
+    plt.margins(0.2)
+    plt.savefig('comparsion.png')
     plt.show()
 
 

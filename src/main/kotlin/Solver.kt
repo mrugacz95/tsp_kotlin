@@ -1,6 +1,4 @@
-import java.lang.StringBuilder
-import kotlin.math.abs
-import kotlin.math.min
+import java.io.File
 import kotlin.system.measureTimeMillis
 
 abstract class Solver {
@@ -34,7 +32,7 @@ abstract class Solver {
         solutions = mutableListOf()
     }
 
-    fun start() {
+    fun run(): Solution {
         for (i in 0..iterations) {
             var solution: Solution? = null
             val timeElapsed = measureTimeMillis {
@@ -44,29 +42,29 @@ abstract class Solver {
             timings.add(timeElapsed)
             scores.add(graph.countLength(solution!!))
         }
+        return solutions[scores.indices.maxBy { scores[it] }!!]
     }
 
-    protected abstract fun solve(): Solution
+    abstract fun solve(): Solution
 
     fun results(): String {
         val result = StringBuilder()
-        result.append("name: ${getName()}\n")
-        result.append("time: ")
+        result.append("name:${getName()}\n")
+        result.append("time:")
         result.append(timings.joinToString(","))
         result.append("\nscore:")
         result.append(scores.joinToString(","))
         val bestSolutionId = scores.indices.maxBy { scores[it] }
-        result.append("\nbest: ")
+        result.append("\nbest:")
         result.append(solutions[bestSolutionId!!])
-        result.append("\nmin: ")
+        result.append("\nmin:")
         result.append("${scores.min()}")
-        result.append("\nmax: ")
+        result.append("\nmax:")
         result.append("${scores.max()}")
-        result.append("\navg: ")
+        result.append("\navg:")
         result.append("${scores.average()}")
-        result.append("\ngraph: ")
+        result.append("\ngraph:")
         result.append(graph.name)
-        result.append("\n\n")
         return result.toString()
     }
 
@@ -84,5 +82,9 @@ abstract class Solver {
             return (i - 1 + graph.size) % (graph.size / 2)
         }
         return (i - 1 + graph.size) % (graph.size / 2) + graph.size / 2
+    }
+
+    fun saveResults() {
+        File("data/solutions/${graph.name}.${getName()}.tour").writeText(results())
     }
 }
