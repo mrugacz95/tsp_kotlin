@@ -1,3 +1,5 @@
+import kotlin.system.measureTimeMillis
+
 class IteratedLocalSearch : LocalSearch() {
 
     override fun getName(): String {
@@ -6,11 +8,12 @@ class IteratedLocalSearch : LocalSearch() {
 
     var time: Long = 0
 
-    init {
+    override fun prepare() {
         val msls = MultipleStartLocalSearch(100)
         msls.graph = graph
-        msls.run()
-        time = msls.timings.average().toLong()
+        time = measureTimeMillis {
+            msls.solve()
+        }
     }
 
     override fun solve(): Solution {

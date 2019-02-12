@@ -19,9 +19,13 @@ open class LocalSearch : Solver() {
     fun checkNeigbours(solution: Solution): Int {
         for (i in 1 until graph.size) {
             for (j in 0 until i) {
-                val delta = delta(solution, i, j)
+                val (delta, method) = delta(solution, i, j)
                 if (delta < 0) {
-                    solution.swap(i, j)
+                    if (method) {
+                        solution.swap(i, j)
+                    } else {
+                        solution.revert(i, j, inclusive = true)
+                    }
                     return delta
                 }
             }

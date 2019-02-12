@@ -1,15 +1,17 @@
 import java.io.File
+import kotlin.math.max
+import kotlin.math.min
 import kotlin.system.measureTimeMillis
 
 abstract class Solver {
 
     var graph: Graph = Graph(0)
-    var iterations = 10
+    open var repetions = 10
     var timings = mutableListOf<Long>()
     var scores = mutableListOf<Int>()
     var solutions = mutableListOf<Solution>()
 
-    fun delta(solution: Solution, a: Int, b: Int): Int {
+    fun asymmetricDelta(solution: Solution, a: Int, b: Int): Int {
         var result = 0
         result -= graph.distance(solution[a], solution[prev(a)])
         result -= graph.distance(solution[a], solution[next(a)])
@@ -26,14 +28,41 @@ abstract class Solver {
         return result
     }
 
+    fun symmetricDelta(solution: Solution, a: Int, b: Int): Int {
+        var result = 0
+        val smaller = min(a, b)
+        val greater = max(a, b)
+        result -= graph.distance(solution[smaller], solution[prev(smaller)])
+        result -= graph.distance(solution[greater], solution[next(greater)])
+
+        result += graph.distance(solution[smaller], solution[next(greater)])
+        result += graph.distance(solution[greater], solution[prev(smaller)])
+        return result
+    }
+
+    fun delta(solution: Solution, a: Int, b: Int): Pair<Int, Boolean> {
+        if (next(a) == b || next(b) == a) {
+            return Pair(asymmetricDelta(solution, a, b), true)
+        }
+        if ((a < graph.size / 2 && b < graph.size / 2)
+            || (a > graph.size / 2 && b > graph.size / 2)
+        ) {
+            return Pair(symmetricDelta(solution, a, b), false)
+        }
+        return Pair(asymmetricDelta(solution, a, b), true)
+    }
+
     fun reset() {
         timings = mutableListOf()
         scores = mutableListOf()
         solutions = mutableListOf()
     }
 
+    protected open fun prepare() {}
+
     fun run(): Solution {
-        for (i in 0..iterations) {
+        prepare()
+        for (i in 0 until repetions) {
             var solution: Solution? = null
             val timeElapsed = measureTimeMillis {
                 solution = solve()
@@ -84,7 +113,7 @@ abstract class Solver {
         return (i - 1 + graph.size) % (graph.size / 2) + graph.size / 2
     }
 
-    fun saveResults() {
-        File("data/solutions/${graph.name}.${getName()}.tour").writeText(results())
+    fun saveResults(filePath: String = "data/solutions/${graph.name}.${getName()}.tour") {
+        File(filePath).writeText(results())
     }
 }

@@ -72,8 +72,20 @@ class Solution {
         solution.shuffle()
     }
 
-    fun crossover(father: Solution, mother: Solution) {
-
+    fun crossover(mother: Solution): Solution {
+        val child: MutableList<Int> = mutableListOf<Int>().apply { addAll(solution) }
+        var length = Random().nextInt(solution.size / 2)
+        var startingPoint = Random().nextInt(solution.size / 2)
+        for (i in 0 until length) {
+            child[(i + startingPoint) % (solution.size / 2)] = mother[(i + startingPoint) % (solution.size / 2)]
+        }
+        length = Random().nextInt(solution.size / 2)
+        startingPoint = Random().nextInt(solution.size / 2)
+        for (i in 0 until length) {
+            child[(i + startingPoint) % (solution.size / 2) + solution.size / 2] =
+                mother[(i + startingPoint) % (solution.size / 2) + solution.size / 2]
+        }
+        return Solution(child)
     }
 
     fun roll(from: Int, to: Int, shift: Int): Solution {
@@ -84,9 +96,11 @@ class Solution {
         return this
     }
 
-    fun revert(from: Int, to: Int): Solution {
+    fun revert(from: Int, to: Int, inclusive: Boolean = false): Solution {
         val start = min(from, to)
-        val end = max(to, from) - 1
+        var end = max(to, from)
+        if (!inclusive)
+            end -= 1
         for (i in 0..floor((end - start) / 2.0).toInt()) {
             solution[start + i] = solution[end - i].also { solution[end - i] = solution[start + i] }
         }
