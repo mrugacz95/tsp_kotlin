@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5547ae1-b2ce-4eaf-aed4-f884e2aba69b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/python/correlation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/HybridAlgorithm.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/solutions/kroA100.HybridAlgorithm.tour" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/solutions/kroA150.HybridAlgorithm.tour" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/solutions/kroA100.IteratedLocalSearch.tour" beforeDir="false" afterPath="$PROJECT_DIR$/data/solutions/kroA100.IteratedLocalSearch.tour" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/solutions/kroA100.LocalSearch.tour" beforeDir="false" afterPath="$PROJECT_DIR$/data/solutions/kroA100.LocalSearch.tour" afterDir="false" />
@@ -15,13 +15,18 @@
       <change beforePath="$PROJECT_DIR$/data/solutions/kroA150.MultipleStartLocalSearch.tour" beforeDir="false" afterPath="$PROJECT_DIR$/data/solutions/kroA150.MultipleStartLocalSearch.tour" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/solutions/kroA150.NearestCycle.tour" beforeDir="false" afterPath="$PROJECT_DIR$/data/solutions/kroA150.NearestCycle.tour" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/solutions/kroA150.NearestNeighbour.tour" beforeDir="false" afterPath="$PROJECT_DIR$/data/solutions/kroA150.NearestNeighbour.tour" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/correlation.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/correlation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/visualization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Graph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Graph.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/HybridAlgorithm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/HybridAlgorithm.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/IteratedLocalSearch.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/IteratedLocalSearch.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/LocalSearch.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/LocalSearch.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/MultipleStartLocalSearch.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/MultipleStartLocalSearch.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/NearestNeighbour.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/NearestNeighbour.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Solution.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Solver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Solver.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/TSP.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/TSP.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vis.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -33,8 +38,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/tsp$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1549936286033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tsp$correlation.coverage" NAME="correlation Coverage Results" MODIFIED="1549934102459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tsp$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1550014382000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tsp$correlation.coverage" NAME="correlation Coverage Results" MODIFIED="1550014376080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -43,43 +62,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/TSP.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="5" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="28" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/visualization.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="48" column="16" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="59" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/HybridAlgorithm.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="75">
+              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/LocalSearch.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/python/visualization.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.HybridAlgorithm.tour">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.HybridAlgorithm.tour">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="393" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="393" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/correlation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+            <state relative-caret-position="301">
+              <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -90,8 +128,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Solver.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+            <state relative-caret-position="160">
+              <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Graph.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#62#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,29 +149,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Solution.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="85" column="84" selection-start-line="85" selection-start-column="84" selection-end-line="85" selection-end-column="84" />
+            <state relative-caret-position="160">
+              <caret line="108" column="16" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/LocalSearch.kt">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/IteratedLocalSearch.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/1000LS/12.tour">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/1000LS/9.tour">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -142,6 +182,8 @@
       <find>12</find>
       <find>,</find>
       <find>greater</find>
+      <find>annotate</find>
+      <find>,</find>
     </findStrings>
     <replaceStrings>
       <replace>,</replace>
@@ -167,24 +209,27 @@
         <option value="$PROJECT_DIR$/data/solutions/kroA150.NearestNeighbour.tour" />
         <option value="$PROJECT_DIR$/data/solutions/kroA150.NearestCycle.tour" />
         <option value="$PROJECT_DIR$/python/count.py" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Graph.kt" />
         <option value="$PROJECT_DIR$/data/solutions/kroA100.LocalSearch.tour" />
         <option value="$PROJECT_DIR$/data/solutions/kroA150.LocalSearch.tour" />
         <option value="$PROJECT_DIR$/data/solutions/kroA100.MultipleStartLocalSearch.tour" />
         <option value="$PROJECT_DIR$/data/solutions/kroA150.MultipleStartLocalSearch.tour" />
-        <option value="$PROJECT_DIR$/data/solutions/kroA150.IteratedLocalSearch.tour" />
         <option value="$PROJECT_DIR$/data/solutions/kroA100.IteratedLocalSearch.tour" />
         <option value="$PROJECT_DIR$/src/main/kotlin/GeneticAlgorithm.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/EvolutionaryAlgorithm.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/IteratedLocalSearch.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/MultipleStartLocalSearch.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/HybridAlgorithm.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Solver.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/LocalSearch.kt" />
-        <option value="$PROJECT_DIR$/python/correlation.py" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Solution.kt" />
-        <option value="$PROJECT_DIR$/python/visualization.py" />
+        <option value="$PROJECT_DIR$/data/test/sol1.tour" />
+        <option value="$PROJECT_DIR$/data/test/sol2.tour" />
+        <option value="$PROJECT_DIR$/data/test/child.tour" />
         <option value="$PROJECT_DIR$/src/main/kotlin/TSP.kt" />
+        <option value="$PROJECT_DIR$/python/correlation.py" />
+        <option value="$PROJECT_DIR$/data/solutions/kroA150.IteratedLocalSearch.tour" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/IteratedLocalSearch.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Solution.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Graph.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/HybridAlgorithm.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/LocalSearch.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Solver.kt" />
+        <option value="$PROJECT_DIR$/python/visualization.py" />
       </list>
     </option>
   </component>
@@ -200,7 +245,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,6 +256,12 @@
               <item name="tsp" type="b2602c69:ProjectViewProjectNode" />
               <item name="tsp_to" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tsp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tsp_to" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="solutions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tsp" type="b2602c69:ProjectViewProjectNode" />
@@ -241,12 +291,13 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549936277902" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550014435092" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -255,7 +306,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -372,7 +423,8 @@
       <workItem from="1549802241934" duration="232000" />
       <workItem from="1549802511611" duration="1361000" />
       <workItem from="1549804153366" duration="12935000" />
-      <workItem from="1549829293280" duration="44279000" />
+      <workItem from="1549829293280" duration="47874000" />
+      <workItem from="1549992504439" duration="16858000" />
     </task>
     <task id="LOCAL-00001" summary="More solvers">
       <created>1549922061517</created>
@@ -381,39 +433,45 @@
       <option name="project" value="LOCAL" />
       <updated>1549922061517</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="More solvers and fixes">
+      <created>1549936312326</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1549936312326</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58807000" />
+    <option name="totallyTimeSpent" value="79260000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-162" y="-900" width="1600" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25930682" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22079588" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="UI Designer" order="6" />
-      <window_info anchor="bottom" id="Inspection Results" sideWeight="0.49935815" weight="0.32961586" />
-      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.4537869" weight="0.32713756" />
+      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.43453145" weight="0.32589838" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.4987163" weight="0.32961586" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.5911425" visible="true" weight="0.34076828" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.46854943" weight="0.37546468" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49807444" weight="0.32961586" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.5661104" visible="true" weight="0.3172243" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.8045234" weight="0.37482318" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49919224" weight="0.12022631" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49757674" weight="0.3649222" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.40885752" side_tool="true" visible="true" weight="0.34076828" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.4338896" side_tool="true" visible="true" weight="0.3172243" />
       <window_info anchor="bottom" id="Build" order="11" weight="0.32939634" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Flutter Performance" order="14" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" sideWeight="0.49807444" weight="0.32961586" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -422,11 +480,11 @@
       <window_info anchor="right" id="Flutter Inspector" order="5" />
       <window_info anchor="right" id="Flutter Outline" order="6" />
       <window_info anchor="right" id="Gradle" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Database" order="8" weight="0.32956383" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="11" />
-      <window_info anchor="right" id="SciView" order="12" visible="true" weight="0.31964058" />
+      <window_info active="true" anchor="right" id="SciView" order="12" visible="true" weight="0.4216945" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,7 +492,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="More solvers" />
-    <option name="LAST_COMMIT_MESSAGE" value="More solvers" />
+    <MESSAGE value="More solvers and fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="More solvers and fixes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -442,12 +501,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/Solution.kt</url>
-          <line>93</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/IteratedLocalSearch.kt</url>
           <line>11</line>
@@ -462,19 +515,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/HybridAlgorithm.kt</url>
-          <line>29</line>
-          <properties />
-          <option name="timeStamp" value="42" />
+          <line>67</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/LocalSearch.kt</url>
-          <line>8</line>
-          <properties />
-          <option name="timeStamp" value="57" />
+          <url>file://$PROJECT_DIR$/src/main/kotlin/HybridAlgorithm.kt</url>
+          <line>46</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/python/visualization.py</url>
-          <line>62</line>
+          <line>56</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -482,11 +539,36 @@
           <line>21</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python/visualization.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python/visualization.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>nodesFromMother.subList(firstLoopStartPoint, secondLoopEndPoint - firstLoopLength)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>nodesFromMother.subList(0, firstLoopStartPoint)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>plt.show()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>child.contains(17)</expression-string>
         <language-id>kotlin</language-id>
@@ -525,57 +607,9 @@
         <language-id>kotlin</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>graph.distance(solution[a], solution[a])</expression-string>
-        <language-id>kotlin</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>graph.distance(solution[a], solution[])</expression-string>
-        <language-id>kotlin</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(b + 1 + graph.size) % (graph.size / 2) +  (1 - bInFirstLoop) * graph.size / 2</expression-string>
-        <language-id>kotlin</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/solution.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="99" column="2" selection-start-line="99" selection-start-column="2" selection-end-line="99" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Solution.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Solver.java" />
-    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.11/d46e00faac79f8ec6bb956154ecde4282871a6bf/kotlin-stdlib-1.3.11-sources.jar!/kotlin/Arrays.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.11/e49742d3259938ea3539346c8ca3babb54a5140f/kotlin-stdlib-common-1.3.11-sources.jar!/generated/_Arrays.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="2825" column="20" selection-start-line="2825" selection-start-column="20" selection-end-line="2825" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.11/d46e00faac79f8ec6bb956154ecde4282871a6bf/kotlin-stdlib-1.3.11-sources.jar!/kotlin/Collections.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="99" column="15" selection-start-line="99" selection-start-column="15" selection-end-line="99" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/kroA150.tsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -603,13 +637,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/count.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/python/count.py" />
     <entry file="file://$PROJECT_DIR$/../anaconda3/lib/python3.7/site-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -631,47 +659,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Graph.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-          <folding>
-            <element signature="e#0#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.NearestCycle.tour">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.NearestNeighbour.tour">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.NearestCycle.tour">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.LocalSearch.tour">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="189" selection-start-line="3" selection-start-column="189" selection-end-line="3" selection-end-column="189" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.MultipleStartLocalSearch.tour">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/kroA100.tsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="9" selection-start-line="3" selection-end-line="3" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -682,31 +673,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.IteratedLocalSearch.tour">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.11/d46e00faac79f8ec6bb956154ecde4282871a6bf/kotlin-stdlib-1.3.11-sources.jar!/kotlin/system/Timing.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.MultipleStartLocalSearch.tour">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/IteratedLocalSearch.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -716,23 +686,6 @@
           <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.NearestNeighbour.tour">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.IteratedLocalSearch.tour">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.HybridAlgorithm.tour">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/MultipleStartLocalSearch.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -768,58 +721,191 @@
     <entry file="file://$PROJECT_DIR$/data/1000LS/9.tour">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/LocalSearch.kt">
+    <entry file="file://$PROJECT_DIR$/data/test/sol2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/test/sol1.tour">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+        <state>
+          <caret column="4" selection-start-column="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/test/child.tour">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="393" selection-start-line="3" selection-start-column="393" selection-end-line="3" selection-end-column="393" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/test/sol2.tour">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="393" selection-start-line="3" selection-start-column="393" selection-end-line="3" selection-end-column="393" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.LocalSearch.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.MultipleStartLocalSearch.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/TSP.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/kroA100.tsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="9" selection-start-line="3" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.NearestCycle.tour">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.NearestNeighbour.tour">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.NearestNeighbour.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.NearestNeighbour.tour">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.NearestCycle.tour">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.IteratedLocalSearch.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.IteratedLocalSearch.tour">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.IteratedLocalSearch.tour">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.MultipleStartLocalSearch.tour">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.MultipleStartLocalSearch.tour">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="393" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="393" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solutions/kroA150.HybridAlgorithm.tour">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/solutions/kroA100.HybridAlgorithm.tour">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="393" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="393" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/correlation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+        <state relative-caret-position="301">
+          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/HybridAlgorithm.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/IteratedLocalSearch.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="120">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Solution.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="85" column="84" selection-start-line="85" selection-start-column="84" selection-end-line="85" selection-end-column="84" />
+        <state relative-caret-position="160">
+          <caret line="108" column="16" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/visualization.py">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Graph.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="48" column="16" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="59" selection-end-column="20" />
+        <state relative-caret-position="160">
+          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/HybridAlgorithm.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/LocalSearch.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Solver.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        <state relative-caret-position="160">
+          <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/TSP.kt">
+    <entry file="file://$PROJECT_DIR$/python/visualization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="28" selection-end-column="5" />
+        <state relative-caret-position="255">
+          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -876,12 +962,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>main|put.poznan.mrugas.tsp</last-edited>
+          <last-edited>Python|put.poznan.mrugas.tsp</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

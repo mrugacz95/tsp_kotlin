@@ -68,27 +68,45 @@ class Solution {
         return solution[i]
     }
 
-    fun shuffle() {
+    private fun shuffle() {
         solution.shuffle()
     }
 
-    fun crossover(mother: Solution): Solution {
-        val child: MutableList<Int> = mutableListOf<Int>().apply { addAll(solution) }
-        var length = Random().nextInt(solution.size / 2)
-        var startingPoint = Random().nextInt(solution.size / 2)
-        for (i in 0 until length) {
-            child[(i + startingPoint) % (solution.size / 2)] = mother[(i + startingPoint) % (solution.size / 2)]
+    fun crossover(mother: Solution): Solution { // double OX crossover
+        roll(0, solution.size / 2, Random().nextInt(solution.size / 2))
+        roll(solution.size / 2, solution.size, Random().nextInt(solution.size / 2))
+
+        var firstLoopEndPoint = Random().nextInt(solution.size / 2)
+        var firstLoopStartPoint = Random().nextInt(solution.size / 2)
+        if (firstLoopEndPoint < firstLoopStartPoint) {
+            firstLoopEndPoint = firstLoopStartPoint.also { firstLoopStartPoint = firstLoopEndPoint }
         }
-        length = Random().nextInt(solution.size / 2)
-        startingPoint = Random().nextInt(solution.size / 2)
-        for (i in 0 until length) {
-            child[(i + startingPoint) % (solution.size / 2) + solution.size / 2] =
-                mother[(i + startingPoint) % (solution.size / 2) + solution.size / 2]
+        val firstLoopLength = firstLoopEndPoint - firstLoopStartPoint
+        val firstLoopSubarray = solution.subList(firstLoopStartPoint, firstLoopEndPoint)
+
+        var secondLoopEndPoint = Random().nextInt(solution.size / 2) + solution.size / 2
+        var secondLoopStartPoint = Random().nextInt(solution.size / 2) + solution.size / 2
+        if (secondLoopEndPoint < secondLoopStartPoint) {
+            secondLoopEndPoint = secondLoopStartPoint.also { secondLoopStartPoint = secondLoopEndPoint }
         }
-        return Solution(child)
+        val secondLoopSubarray = solution.subList(secondLoopStartPoint, secondLoopEndPoint)
+
+        val nodesFromMother = mutableListOf<Int>()
+        for (i in 0 until solution.size) {
+            val motherNode = mother[i]
+            if (!firstLoopSubarray.contains(motherNode) && !secondLoopSubarray.contains(motherNode)) {
+                nodesFromMother.add(motherNode)
+            }
+        }
+        val child = nodesFromMother.subList(0, firstLoopStartPoint) +
+                firstLoopSubarray +
+                nodesFromMother.subList(firstLoopStartPoint, secondLoopStartPoint - firstLoopLength) +
+                secondLoopSubarray +
+                nodesFromMother.subList(secondLoopStartPoint - firstLoopLength, nodesFromMother.size)
+        return Solution(child.toMutableList())
     }
 
-    fun roll(from: Int, to: Int, shift: Int): Solution {
+    private fun roll(from: Int, to: Int, shift: Int): Solution {
         val tmp = mutableListOf<Int>().apply { addAll(solution) }.toList()
         for (i in from until to) {
             solution[(i - from + shift) % (to - from) + from] = tmp[i]
@@ -126,5 +144,22 @@ class Solution {
         return Solution(newSolution)
     }
 
+    fun mutate(): Solution {
+        revert(Random().nextInt(solution.size / 2), Random().nextInt(solution.size / 2))
+        revert(
+            Random().nextInt(solution.size / 2) + solution.size / 2,
+            Random().nextInt(solution.size / 2) + solution.size / 2
+        )
+        return this
+    }
+
+    fun isCorrect(): Boolean {
+        for (i in 0 until solution.size) {
+            if (!solution.contains(i)) {
+                return false
+            }
+        }
+        return true
+    }
 
 }

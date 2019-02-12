@@ -1,4 +1,4 @@
-class MultipleStartLocalSearch(var iterations: Int = 100) : Solver() {
+class MultipleStartLocalSearch(private var iterations: Int = 100) : Solver() {
 
     override fun getName(): String {
         return "MultipleStartLocalSearch"

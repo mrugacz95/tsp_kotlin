@@ -11,12 +11,12 @@ open class LocalSearch : Solver() {
         var prevScore: Int
         do {
             prevScore = bestScore
-            bestScore += checkNeigbours(solution)
+            bestScore += checkNeighbours(solution)
         } while (bestScore < prevScore)
         return solution
     }
 
-    fun checkNeigbours(solution: Solution): Int {
+    private fun checkNeighbours(solution: Solution): Int {
         for (i in 1 until graph.size) {
             for (j in 0 until i) {
                 val (delta, method) = delta(solution, i, j)

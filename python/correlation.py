@@ -19,7 +19,7 @@ def similarity(sol1, sol2):
         pairs.add(pair)
         pairs.add(reversed(pair))
     for pair in pairwise(sol2):
-        if pair in pairs or reversed(pair) in pairs:
+        if pair in pairs:
             sim += 1
     return sim / len(sol1)
 
@@ -46,9 +46,10 @@ def main():
     for idx, solution in enumerate(solutions):
         quality.append(scores[idx] / best)
         sim.append(similarity(best_solution, solution))
-    plt.scatter(sim, quality)
+    plt.scatter(sim, quality, s=3)
     plt.xlabel('Similarity')
     plt.ylabel('Quality')
+    plt.savefig('correlation.png')
     plt.show()
 
 

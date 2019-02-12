@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 import glob2
 import matplotlib.pyplot as plt
 import numpy as np
@@ -20,21 +22,17 @@ def read_graph(graph_file):
     return nodes
 
 
-def plot_points(graph_file, nodes):
-    ids, x, y = zip(*nodes)
-    plt.scatter(x, y, c='b', s=5)
-
-
-def plot_loop(loop, nodes):
+def plot_loop(loop, nodes, c='b', start_id=0):
     for node_id in range(len(loop)):
         p1, p2 = loop[node_id - 1], loop[node_id]
         _, x1, y1 = nodes[p1]
         _, x2, y2 = nodes[p2]
-        plt.plot([x1, x2], [y1, y2], c='b', linewidth=1)
+        plt.scatter(x2, y2, c=c, s=5)
+        plt.plot([x1, x2], [y1, y2], color=c, linewidth=1)
 
 
 def main():
-    averages = []
+    averages = defaultdict(list)
     for solution_file in glob2.glob('data/solutions/*.tour'):
         with open(solution_file) as sol:
             lines = sol.read().split("\n")
@@ -42,32 +40,29 @@ def main():
             for line in lines:
                 k, v = line.split(':')
                 all_info[k] = v
-        if all_info['graph'] == 'kroA100':
-            averages.append((float(all_info['avg']), all_info['name']))
+        averages[all_info['graph']].append((float(all_info['min']), all_info['name']))
         graph_file = f'data/{all_info["graph"]}.tsp'
         nodes = read_graph(graph_file)
-        plot_points(graph_file, nodes)
-
         solution = list(map(int, all_info['best'].split(', ')))
-        first_loop = solution[:len(solution)]
-        second_loop = solution[len(solution):]
-        # first loop
+        first_loop = solution[:int(len(solution) / 2)]
+        second_loop = solution[int(len(solution) / 2):]
         plot_loop(first_loop, nodes)
-        # second loop
-        plot_loop(second_loop, nodes)
+        plot_loop(second_loop, nodes, c='r', start_id=len(first_loop))
         plt.title(f'{all_info["name"]} ({all_info["graph"]})')
         plt.savefig(solution_file.replace('tour', 'png'))
         plt.show()
-    values, labels = zip(*sorted(averages))
-    labels, values = list(labels), list(values)
-    pos = np.arange(len(labels))
-    plt.bar(pos, values, log=True)
-    plt.xticks(pos, labels, rotation='vertical')
-    plt.title('Comparsion')
-    plt.subplots_adjust(bottom=0.45)
-    plt.margins(0.2)
-    plt.savefig('comparsion.png')
-    plt.show()
+    for k in averages.keys():
+        values, labels = zip(*sorted(averages[k]))
+        labels, values = list(labels), list(values)
+        pos = np.arange(len(labels))
+        plt.bar(pos, values, log=True)
+        plt.xticks(pos, labels, rotation='vertical')
+        plt.title(f'Comparision - {k}')
+        plt.ylabel("Min solution length")
+        plt.subplots_adjust(bottom=0.45)
+        plt.margins(0.3)
+        plt.savefig('comparsion.png')
+        plt.show()
 
 
 if __name__ == '__main__':

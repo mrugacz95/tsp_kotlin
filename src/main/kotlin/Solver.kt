@@ -6,12 +6,12 @@ import kotlin.system.measureTimeMillis
 abstract class Solver {
 
     var graph: Graph = Graph(0)
-    open var repetions = 10
-    var timings = mutableListOf<Long>()
-    var scores = mutableListOf<Int>()
-    var solutions = mutableListOf<Solution>()
+    open var repetitions = 10
+    private var timings = mutableListOf<Long>()
+    private var scores = mutableListOf<Int>()
+    private var solutions = mutableListOf<Solution>()
 
-    fun asymmetricDelta(solution: Solution, a: Int, b: Int): Int {
+    private fun asymmetricDelta(solution: Solution, a: Int, b: Int): Int {
         var result = 0
         result -= graph.distance(solution[a], solution[prev(a)])
         result -= graph.distance(solution[a], solution[next(a)])
@@ -28,7 +28,7 @@ abstract class Solver {
         return result
     }
 
-    fun symmetricDelta(solution: Solution, a: Int, b: Int): Int {
+    private fun symmetricDelta(solution: Solution, a: Int, b: Int): Int {
         var result = 0
         val smaller = min(a, b)
         val greater = max(a, b)
@@ -62,16 +62,19 @@ abstract class Solver {
 
     fun run(): Solution {
         prepare()
-        for (i in 0 until repetions) {
+        for (i in 0 until repetitions) {
             var solution: Solution? = null
             val timeElapsed = measureTimeMillis {
                 solution = solve()
             }
-            solutions.add(solution!!)
-            timings.add(timeElapsed)
-            scores.add(graph.countLength(solution!!))
+            solution?.let {
+                solutions.add(it)
+                timings.add(timeElapsed)
+                scores.add(graph.countLength(it))
+            }
         }
-        return solutions[scores.indices.maxBy { scores[it] }!!]
+        val maxIndex = scores.indices.maxBy { scores[it] }!!
+        return solutions[maxIndex]
     }
 
     abstract fun solve(): Solution
@@ -106,7 +109,7 @@ abstract class Solver {
         return (i + 1) % (graph.size / 2) + graph.size / 2
     }
 
-    fun prev(i: Int): Int {
+    private fun prev(i: Int): Int {
         if (i < graph.size / 2) {
             return (i - 1 + graph.size) % (graph.size / 2)
         }

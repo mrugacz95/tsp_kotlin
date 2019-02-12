@@ -1,8 +1,6 @@
 import java.io.File
 import java.lang.Math.*
-import java.lang.StringBuilder
 import java.util.*
-import kotlin.random.Random
 
 class Graph {
 
@@ -61,14 +59,14 @@ class Graph {
     }
 
     fun countLength(solution: Solution): Int {
-        var lenght = 0
+        var length = 0
         for ((fistNode, secondNode) in solution.firstLoop()) {
-            lenght += matrix[fistNode][secondNode]
+            length += matrix[fistNode][secondNode]
         }
         for ((fistNode, secondNode) in solution.secondLoop()) {
-            lenght += matrix[fistNode][secondNode]
+            length += matrix[fistNode][secondNode]
         }
-        return lenght
+        return length
     }
 
     fun getMostDistantNodes(): Pair<Int, Int> {

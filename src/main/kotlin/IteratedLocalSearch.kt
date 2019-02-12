@@ -6,7 +6,7 @@ class IteratedLocalSearch : LocalSearch() {
         return "IteratedLocalSearch"
     }
 
-    var time: Long = 0
+    private var time: Long = 0
 
     override fun prepare() {
         val msls = MultipleStartLocalSearch(100)

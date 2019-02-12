@@ -17,7 +17,7 @@ class NearestNeighbour : Solver() {
             var closestDistance = Int.MAX_VALUE
             var closestNode = firstLoopNode
             for (node in availableNodes) {
-                var last = firstLoop.last()
+                val last = firstLoop.last()
                 val newDistance = graph.distance(last, node)
                 if (closestDistance > newDistance) {
                     closestDistance = newDistance
